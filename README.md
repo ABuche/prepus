@@ -5,6 +5,13 @@
 Ce directory est seulement la base afin d'avoir un seul _repository_. On tente de limiter le nombre de fichier dans celui-ci. Vous êtes invités à contribuer dans les sous-dossiers.
 Chaque pull request doit être revu par un membre d'équipe **n'ayant pas participé au développement en revue** ainsi que le par le _product owner_ avant d'être accepté.
 
+Pour qu'un pull request soit accepté, il faut avoir ajouté les tests nécessaires à vos ajouts et que tous les tests passes (voir les sections _tests_ des éléments plus bas)
+
+# Table des matières
+-----------------
+1. [Front-end](#Front-end)
+1. [Elasticsearch](#Elasticsearch)
+
 Membres de l'équipe:
 - Austin-Didier Tran (_Product owner_)
 - Raphaël Drouin (_Scrum master_)
@@ -14,7 +21,7 @@ Membres de l'équipe:
 - Anne-Marie Desloges
 - ~~Vincent Bougie~~ **RIP**
 
-# Front end
+# Front-end
 Le front end utilise React-Redux. Plus particulièrement on utilise [un boilerplate de Davezuko](https://github.com/davezuko/react-redux-starter-kit/tree/v2.0.0-alpha.1 "v2.0.0-alpha.1").
 ## Prérequis
 * node `^4.2.0`
@@ -28,7 +35,8 @@ $ npm install       #Vous avez le temps de vous faire un café, c'est long la pr
 $ npm start         #Démarre le serveur en devlopement sur localhost:5000
 ```
 
-Pour compiler le serveur dans le dossier .dist on utilise `npm run compile`. Attention, cette commande, comme toutes les autres, utilise l'environnement par défaut qui est dev. Ainsi, pour compiler pour l'environnement de production, on utilise `NODE_END=production npm run compile`. Pour exécuter le linting et les tests, et sur leur succès, compiler, on éxécute `NODE_END=production npm run deploy`.
+Pour compiler le serveur dans le dossier .dist on utilise `npm run compile`. Attention, cette commande, comme toutes les autres, utilise l'environnement par défaut qui est dev. Ainsi, pour compiler pour l'environnement de production, on utilise `NODE_END=production npm run compile`.
+Pour exécuter le linting et les tests, et sur leur succès, compiler, on éxécute `NODE_END=production npm run deploy`.
 
 # Elasticsearch
 Le contenu des documents est storé dans [elasticsearch v 5.4](https://www.elastic.co/guide/en/elastic-stack/5.4/index.html).
@@ -48,6 +56,15 @@ $ ./bin/kibana                 # $KIBANA_HOME: répertoire d'installation
 ```
 Pour d'autre os, voir la [documentation](https://www.elastic.co/guide/en/elastic-stack/5.4/installing-elastic-stack.html)
 
+# Back-end
+L'IDE utilisé est IntelliJ. C'est facultatif mais les procédures spécifiées plus bas explique uniquement pour cet IDE, si vous en utilisez un autre, ajoutez les procédure au Readme.
+
+## Tests
+Dans IntelliJ, faire clique droit sur le dossier src/test/java/com et appuyer sur `run test`.
+
+# Base de données
+On utilise postgres comme base de données. Le schéma a été généré à l'aide de
+Power Designer. 
 ---
 In the words of Abraham Lincoln:
 > You can't always trust a quote of a famous one on Internet
